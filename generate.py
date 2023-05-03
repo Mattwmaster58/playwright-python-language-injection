@@ -67,7 +67,7 @@ def generate_expression(method: str, index: int, module: str) -> str:
 
 
 def generate_xml(method: str, index: int, module: str) -> str:
-    return f"<place><![CDA TA[{generate_expression(method, index, module)}]]></place>"
+    return f"<place><![CDATA[{generate_expression(method, index, module)}]]></place>"
 
 
 def main():
