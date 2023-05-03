@@ -72,31 +72,29 @@ def generate_xml(method: str, index: int, module: str) -> str:
 
 def main():
     language_injection_template = """
-    <LanguageInjectionConfiguration>
       <injection language="{language}" injector-id="python">
         <display-name>{name}</display-name>
         <single-file value="false" />
         {places}
         </injection>
-    </LanguageInjectionConfiguration>
     """
     css, js = generate_css_js_injections()
     css.sort()
     js.sort()
     print(f"generated {len(css)} css and {len(js)} js language injection definitions")
-    css_file_name = f"playwright-{version}-css.xml"
-    Path(css_file_name).write_text(language_injection_template.format(
-        language="CSS",
-        name="playwright - CSS",
-        places="\n".join(starmap(generate_xml, css))
-    ))
-    js_file_name = f"playwright-{version}-js.xml"
-    Path(js_file_name).write_text(language_injection_template.format(
-        language="javascript",
-        name="playwright - JS",
-        places="\n".join(starmap(generate_xml, js))
-    ))
-    print(f"wrote output files: {css_file_name}, {js_file_name}")
+    major_version = version.split(".")[0]
+    output_file = f"playwright-{major_version}.xml"
+    css_injections = language_injection_template.format(language="CSS", name="playwright - CSS",
+                                                        places="\n".join(starmap(generate_xml, css)))
+    js_injections = language_injection_template.format(language="javascript", name="playwright - JS",
+                                                       places="\n".join(starmap(generate_xml, js)))
+    Path(output_file).write_text(f"""
+        <LanguageInjectionConfiguration>
+        {css_injections}
+        {js_injections}
+        </LanguageInjectionConfiguration>
+    """)
+    print(f"wrote output file: {output_file}")
 
 
 if __name__ == '__main__':
