@@ -25,4 +25,4 @@ After downloading, open up your settings in PyCharm → Editor → Language Inje
 
 ### How does this work?
 
-Since the developers of `playwright-python` were consistent with their style, that made this script a lot easier to write. Every single occurrence of a CSS selector argument in a function uses the name `selector` and every occurrence of a JS expression uses the argument name `expression`. So it's as simple as iterating over the entire API surface, and finding methods that have arguments that match the name and type annotation of `str`. 
+Since the developers of `playwright-python` were consistent with their style, that made this script a lot easier to write. Every single occurrence of a CSS selector argument in a function uses the name `selector` and every occurrence of a JS expression uses the argument name `expression`. So it's as simple as iterating over the entire API surface, and finding methods that have arguments that match the name and type annotation of `str`. Both async and sync APIs are supported.
