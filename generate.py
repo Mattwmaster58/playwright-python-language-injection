@@ -63,11 +63,11 @@ def generate_css_js_injections() -> tuple[list[tuple[str, int, str]], ...]:
 
 
 def generate_expression(method: str, index: int, module: str) -> str:
-    return f'+ pyLiteralExpression().and(pyMethodArgument("{method}", {index}, "{module}"))'
+    return f'pyLiteralExpression().and(pyMethodArgument("{method}", {index}, "{module}"))'
 
 
 def generate_xml(method: str, index: int, module: str) -> str:
-    return f"<place><![CDATA[{generate_expression(method, index, module)}]]></place>"
+    return f"<place><![CDA TA[{generate_expression(method, index, module)}]]></place>"
 
 
 def main():
