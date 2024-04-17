@@ -1,4 +1,5 @@
 import inspect
+import typing
 from itertools import starmap
 from pathlib import Path
 from typing import Callable
@@ -12,7 +13,7 @@ def additional_method_matches(additional_methods: dict[str, int], fn: Callable, 
     if fn_name in additional_methods:
         pos = additional_methods[fn_name]
         fn_annotations = fn.__annotations__
-        if [*fn_annotations.values()][pos] == expected_arg_type:
+        if [*fn_annotations.values()][pos] in (expected_arg_type, typing.Optional[expected_arg_type]):
             return True
         else:
             print(
@@ -29,7 +30,10 @@ def generate_css_js_injections() -> tuple[list[tuple[str, int, str]], ...]:
     js_found = []
 
     # these are language injections for methods that do not follow variable naming conventions
-    additional_js_to_idx = {}
+    # positional argument indexes do not count self argument
+    additional_js_to_idx = {
+        "add_init_script": 0
+    }
 
     additional_css_to_idx = {
         "drag_and_drop": 1

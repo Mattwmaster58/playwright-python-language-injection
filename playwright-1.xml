@@ -314,6 +314,14 @@
 <place><![CDATA[pyLiteralExpression().and(pyMethodArgument("_expect_impl", 0, "playwright._impl._assertions.LocatorAssertions"))]]></place>
 <place><![CDATA[pyLiteralExpression().and(pyMethodArgument("_expect_impl", 0, "playwright._impl._assertions.PageAssertions"))]]></place>
 <place><![CDATA[pyLiteralExpression().and(pyMethodArgument("_expect_impl", 0, "playwright._impl._assertions.PageAssertions"))]]></place>
+<place><![CDATA[pyLiteralExpression().and(pyMethodArgument("add_init_script", 0, "playwright._impl._browser_context.BrowserContext"))]]></place>
+<place><![CDATA[pyLiteralExpression().and(pyMethodArgument("add_init_script", 0, "playwright._impl._browser_context.BrowserContext"))]]></place>
+<place><![CDATA[pyLiteralExpression().and(pyMethodArgument("add_init_script", 0, "playwright._impl._page.Page"))]]></place>
+<place><![CDATA[pyLiteralExpression().and(pyMethodArgument("add_init_script", 0, "playwright._impl._page.Page"))]]></place>
+<place><![CDATA[pyLiteralExpression().and(pyMethodArgument("add_init_script", 0, "playwright.async_api._generated.BrowserContext"))]]></place>
+<place><![CDATA[pyLiteralExpression().and(pyMethodArgument("add_init_script", 0, "playwright.async_api._generated.Page"))]]></place>
+<place><![CDATA[pyLiteralExpression().and(pyMethodArgument("add_init_script", 0, "playwright.sync_api._generated.BrowserContext"))]]></place>
+<place><![CDATA[pyLiteralExpression().and(pyMethodArgument("add_init_script", 0, "playwright.sync_api._generated.Page"))]]></place>
 <place><![CDATA[pyLiteralExpression().and(pyMethodArgument("eval_on_selector", 1, "playwright._impl._element_handle.ElementHandle"))]]></place>
 <place><![CDATA[pyLiteralExpression().and(pyMethodArgument("eval_on_selector", 1, "playwright._impl._element_handle.ElementHandle"))]]></place>
 <place><![CDATA[pyLiteralExpression().and(pyMethodArgument("eval_on_selector", 1, "playwright._impl._frame.Frame"))]]></place>
